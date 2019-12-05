@@ -1,14 +1,15 @@
 <template>
-  <div id="app">
-    <router-view></router-view>
+  <div>
+      权限列表组件
   </div>
 </template>
 
 <script>
 export default {
-  name: 'app'
+
 }
 </script>
 
-<style>
+<style lang="less" scoped>
+
 </style>
