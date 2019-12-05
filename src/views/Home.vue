@@ -27,9 +27,7 @@
           </Menu>
         </Sider>
         <Content :style="{padding: '10px 20px'}">
-          <Card>
-            <router-view></router-view>
-          </Card>
+          <router-view></router-view>
         </Content>
       </Layout>
     </Layout>
