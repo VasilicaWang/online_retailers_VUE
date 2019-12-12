@@ -14,7 +14,7 @@
           </FormItem>
           <FormItem>
             <Button type="primary" @click="onSubmit">登 录</Button>&nbsp;
-            <Button type="info" @click="handleReset('formValidate')">重 置</Button>
+            <Button type="primary" @click="handleReset('formValidate')">重 置</Button>
           </FormItem>
         </Form>
       </div>
@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import { login } from '../api/login'
 export default {
   data () {
     return {
@@ -44,7 +45,7 @@ export default {
   },
   methods: {
     async onSubmit () {
-      const { data: res } = await this.$http.post('login', this.LoginFormData)
+      const { data: res } = await login(this.LoginFormData)
       if (res.meta.status !== 200) {
         return this.$message.error({
           background: true,
@@ -102,11 +103,13 @@ export default {
   padding: 0 20px;
   .ivu-form-item {
     margin-bottom: 24px;
+    .ivu-btn {
+      color: #fff;
+    }
     &:nth-child(3) {
       display: flex;
       justify-content: flex-end;
       button {
-        background-color: #333;
         outline: none;
         border: 0;
       }

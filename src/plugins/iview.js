@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { Button, Input, Form, FormItem, Icon, Message, Layout, Header, Sider, Content, Menu, Submenu, MenuItem, Card } from 'view-design'
+import { Button, Input, Form, FormItem, Icon, Message, Layout, Header, Sider, Content, Menu, Submenu, MenuItem, Card, Breadcrumb, BreadcrumbItem, Row, Col, Table, Switch, Page, Modal, Select, Option, Tag } from 'view-design'
 
 import 'view-design/dist/styles/iview.css'
 
@@ -16,4 +16,16 @@ Vue.component('Menu', Menu)
 Vue.component('Submenu', Submenu)
 Vue.component('MenuItem', MenuItem)
 Vue.component('Card', Card)
+Vue.component('Breadcrumb', Breadcrumb)
+Vue.component('BreadcrumbItem', BreadcrumbItem)
+Vue.component('Row', Row)
+Vue.component('Col', Col)
+Vue.component('Table', Table)
+Vue.component('Switchbutton', Switch)
+Vue.component('Page', Page)
+Vue.component('Modal', Modal)
+Vue.component('Select', Select)
+Vue.component('Option', Option)
+Vue.component('Tag', Tag)
 Vue.prototype.$message = Message
+Vue.prototype.$Modal = Modal

@@ -5,4 +5,9 @@ body,
     height: 100%;
     margin: 0;
     padding: 0;
+    min-width: 1200px;
+}
+
+.ivu-input-icon {
+    right: 30px !important;
 }

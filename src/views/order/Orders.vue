@@ -1,6 +1,11 @@
 <template>
   <div>
-      订单列表组件
+    <!-- 面包屑导航 -->
+    <Breadcrumb separator="/">
+      <BreadcrumbItem to="/">主页</BreadcrumbItem>
+      <BreadcrumbItem to="/components/breadcrumb">订单管理</BreadcrumbItem>
+      <BreadcrumbItem>订单列表</BreadcrumbItem>
+    </Breadcrumb>
   </div>
 </template>
 

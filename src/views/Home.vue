@@ -35,6 +35,7 @@
 </template>
 
 <script>
+import { getMenu } from '../api/home'
 export default {
   data () {
     return {
@@ -58,7 +59,7 @@ export default {
       this.$router.push('/login')
     },
     async getMenuList () {
-      const { data: res } = await this.$http.get('menus')
+      const { data: res } = await getMenu()
       //   console.log(res)
       if (res.meta.status !== 200) {
         return this.$message.error({
@@ -97,6 +98,7 @@ export default {
     background-color: #666;
     border: 0;
     text-shadow: 0 0 5px #fff;
+    color: #fff;
   }
   > div {
     height: 100%;

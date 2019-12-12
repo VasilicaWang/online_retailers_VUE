@@ -1,6 +1,11 @@
 <template>
   <div>
-      数据报表组件
+    <!-- 面包屑导航 -->
+    <Breadcrumb separator="/">
+      <BreadcrumbItem to="/">主页</BreadcrumbItem>
+      <BreadcrumbItem to="/components/breadcrumb">数据统计</BreadcrumbItem>
+      <BreadcrumbItem>数据报表</BreadcrumbItem>
+    </Breadcrumb>
   </div>
 </template>
 

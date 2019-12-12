@@ -1,6 +1,11 @@
 <template>
   <div>
-      角色列表组件
+    <!-- 面包屑导航 -->
+    <Breadcrumb separator="/">
+      <BreadcrumbItem to="/">主页</BreadcrumbItem>
+      <BreadcrumbItem to="/components/breadcrumb">权限管理</BreadcrumbItem>
+      <BreadcrumbItem>角色列表</BreadcrumbItem>
+    </Breadcrumb>
   </div>
 </template>
 
