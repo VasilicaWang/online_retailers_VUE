@@ -92,6 +92,7 @@ import { getUser, addUser, changeState, editUser, deleteUser, changeUserRole } f
 import { getRoles } from '../../api/role.js'
 export default {
   data () {
+    // 验证邮箱
     const emailValid = (rule, value, callback) => {
       let emailReg = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/
       if (emailReg.test(value) || value.length === 0) {
@@ -100,6 +101,7 @@ export default {
         callback(new Error('邮箱格式不符合规则'))
       }
     }
+    // 验证手机号
     const mobileValid = (rule, value, callback) => {
       let mobileReg = /^[1]([3-9])[0-9]{9}$/
       if (mobileReg.test(value) || value.length === 0) {
@@ -114,6 +116,7 @@ export default {
         pagenum: 1,
         pagesize: 3
       },
+      // 表格数据配置
       columns: [
         {
           type: 'index',
@@ -151,12 +154,14 @@ export default {
       usersList: [],
       total: 0,
       addUserModal: false,
+      // 添加用户表单数据
       addFormData: {
         username: 'test',
         password: '123456',
         email: '',
         mobile: ''
       },
+      // 表单验证
       formRules: {
         username: [
           { required: true, message: '用户名不能为空', trigger: 'blur' },
@@ -174,6 +179,7 @@ export default {
         ]
       },
       editUserModal: false,
+      // 修改用户信息表单数据
       editFormData: {},
       changRoleModal: false,
       roleUser: {},
@@ -185,6 +191,7 @@ export default {
     this.getUserList()
   },
   methods: {
+    // 获取用户列表
     async getUserList () {
       const { data: res } = await getUser(this.paramsInfo)
       if (res.meta.status !== 200) return this.$message.error(res.meta.msg)
@@ -192,14 +199,17 @@ export default {
       this.total = res.data.total
       // console.log(this.usersList)
     },
+    // 点击页码切换用户列表
     handleNumChange (val) {
       this.paramsInfo.pagenum = val
       this.getUserList()
     },
+    // 设置每页显示条数
     handleSizeChange (val) {
       this.paramsInfo.pagesize = val
       this.getUserList()
     },
+    // 添加用户
     addForm () {
       this.$refs.addFormData.validate(async valid => {
         if (!valid) return this.$message.error('验证未通过')
@@ -209,9 +219,11 @@ export default {
         this.getUserList()
       })
     },
+    // 取消添加
     cancelAdd () {
       this.$refs.addFormData.resetFields()
     },
+    // 更改用户状态
     async switchState (row) {
       console.log(row.mg_state)
       // switch触发返回的是当前的状态，不是改变后的
@@ -220,14 +232,17 @@ export default {
       if (res.meta.status !== 200) return this.$message.error(res.meta.msg)
       this.$message.success(res.meta.msg)
     },
+    // 显示修改用户模态框
     showEditMoal (row) {
       this.editUserModal = true
       this.editFormData = row
     },
+    // 取消修改
     cancelEdit () {
       this.editFormData = {}
       this.$refs.editFormData.resetFields()
     },
+    // 修改用户
     editForm () {
       this.$refs.editFormData.validate(async valid => {
         if (!valid) return this.$message.error('验证未通过')
@@ -239,6 +254,7 @@ export default {
         this.getUserList()
       })
     },
+    // 删除用户
     confirmDeleteUser (row) {
       this.$Modal.confirm({
         title: '删除操作',
@@ -254,17 +270,20 @@ export default {
         }
       })
     },
+    // 显示更改用户角色模态框
     showChangeRole (row) {
       this.changRoleModal = true
       this.roleUser = row
       this.getRoleList()
     },
+    // 获取角色列表
     async getRoleList () {
       const { data: res } = await getRoles()
       if (res.meta.status !== 200) return this.$message.error(res.meta.msg)
       this.$message.success(res.meta.msg)
       this.rolesList = res.data
     },
+    // 更改用户角色
     async changeRole () {
       const { data: res } = await changeUserRole(this.roleUser.id, this.roleId)
       if (res.meta.status !== 200) return this.$message.error(res.meta.msg)
