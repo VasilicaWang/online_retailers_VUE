@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { Button, Input, Form, FormItem, Icon, Message, Layout, Header, Sider, Content, Menu, Submenu, MenuItem, Card, Breadcrumb, BreadcrumbItem, Row, Col, Table, Switch, Page, Modal, Select, Option, Tag, Tree, Cascader, Timeline, TimelineItem } from 'view-design'
+import { Button, Input, Form, FormItem, Icon, Message, Layout, Header, Sider, Content, Menu, Submenu, MenuItem, Card, Breadcrumb, BreadcrumbItem, Row, Col, Table, Switch, Page, Modal, Select, Option, Tag, Tree, Cascader, Timeline, TimelineItem, Alert, Tabs, TabPane } from 'view-design'
 
 import 'view-design/dist/styles/iview.css'
 
@@ -31,5 +31,8 @@ Vue.component('Tree', Tree)
 Vue.component('Cascader', Cascader)
 Vue.component('Timeline', Timeline)
 Vue.component('TimelineItem', TimelineItem)
+Vue.component('Alert', Alert)
+Vue.component('Tabs', Tabs)
+Vue.component('TabPane', TabPane)
 Vue.prototype.$message = Message
 Vue.prototype.$Modal = Modal

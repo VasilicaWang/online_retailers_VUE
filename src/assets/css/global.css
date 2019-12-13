@@ -11,3 +11,7 @@ body,
 .ivu-input-icon {
     right: 30px !important;
 }
+
+.zk-table__header-row {
+    background-color: transparent !important;
+}

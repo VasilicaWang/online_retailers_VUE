@@ -4,6 +4,7 @@ import router from './router'
 import './plugins/iview.js'
 import './assets/css/global.css'
 import './my_theme/index.less'
+import TreeTable from 'vue-table-with-tree-grid'
 
 Vue.config.productionTip = false
 
@@ -17,6 +18,8 @@ Vue.filter('formatDate', (val) => {
   const s = (val.getSeconds() + '').padStart(2, '0')
   return Y + '-' + M + '-' + D + ' ' + h + ':' + m + ':' + s
 })
+
+Vue.component('TreeTable', TreeTable)
 
 new Vue({
   router,
