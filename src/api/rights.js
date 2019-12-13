@@ -6,3 +6,10 @@ export function getRights () {
     method: 'get'
   })
 }
+
+export function getRightsTree () {
+  return request({
+    url: 'rights/tree',
+    method: 'get'
+  })
+}
