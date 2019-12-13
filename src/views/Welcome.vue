@@ -11,13 +11,9 @@ export default {}
 <style lang="less" scoped>
 .welcome_container {
   height: 100%;
-  background: url("../assets/img/bg (10).jpg") no-repeat center;
-  background-size: cover;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 3px solid rgba(255, 255, 255, 0.8);
-  border-radius: 5px;
+  justify-content: flex-end;
+  align-items: flex-end;
   img {
     width: 50%;
   }
